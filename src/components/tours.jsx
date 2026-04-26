@@ -1,18 +1,18 @@
 import Tour from "./tour";
 
-function Tours({ tours }) {
+function Tours({ tours, removeTour }) {
   return (
-    <div>
-      <div>
-        <h2 className='title'>Our Tours</h2>
+    <section>
+      <div className='title'>
+        <h2>Our Tours</h2>
         <div className='title-underline'></div>
       </div>
       <div className='tours'>
         {tours.map((tour) => {
-          return <Tour key={tour.id} {...tour} />;
+          return <Tour key={tour.id} {...tour} removeTour={removeTour} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }
 
